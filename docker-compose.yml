@@ -4,8 +4,8 @@ services:
     image: mongo:4.0.4
     volumes:
       - ./mongo:/data/db
-    ports:
-      - 27018:27017
+    expose:
+      - 27017
 
   credentialagent-migrations:
     image: ghcr.io/velocitynetworkfoundation/credentialagent:testnet
@@ -25,4 +25,3 @@ services:
     restart: on-failure
     depends_on:
       - credentialagent-migrations
-
